@@ -8,4 +8,10 @@ while True:
 print(products) 
 
 for p in products:#p是指小清單
-	print(p[0], '的價格是', p[1])#小清單中商品名稱的價格是
+	print(p[0], '的價格是', p[1])#小清單中商品名稱的價格
+
+
+with open ('products.csv', 'w')as f:
+	for p in products:
+		f.write(p[0] + ',' + p[1] + '\n')
+
