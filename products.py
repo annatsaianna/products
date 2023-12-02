@@ -12,7 +12,8 @@ for p in products:#p是指小清單
 	print(p[0], '的價格是', p[1])#小清單中商品名稱的價格
 
 
-with open ('products.csv', 'w')as f:#打開檔案，就算該檔案不存在，仍會重寫覆蓋出來
+with open ('products.csv', 'w', encoding = 'utf-8')as f:#打開檔案，就算該檔案不存在，仍會重寫覆蓋出來
+	f.write('產品,價格\n')#標題列
 	for p in products:
 		f.write(p[0] + ',' + str(p[1] )+ '\n')#字串用+號來合併，最後換行符號，真正的寫入,將價格整數轉換成字串再合併
 
